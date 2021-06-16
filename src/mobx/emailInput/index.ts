@@ -9,15 +9,13 @@ class EmailInput {
   }
 
   value = '';
-  touched = false;
 
   setValue = (value: string): void => {
-    this.touched = true;
     this.value = value;
   };
 
   get isValid(): boolean {
-    return !this.touched || regexp.test(this.value);
+    return regexp.test(this.value);
   }
 }
 
