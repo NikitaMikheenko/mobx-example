@@ -4,15 +4,21 @@ import todoList from '../../mobx/todoList';
 import styles from './index.module.css';
 
 const TodoList: FC = () => {
-  const { todos, newTodo, setNewTodo, addTodo } = todoList;
+  const { todos, newTodo, setNewTodo, addTodo, removeTodo } = todoList;
 
   const todoListView = todos.map(({ id, title }) => {
-    return <p key={id}>{title}</p>;
+    return (
+      <div key={id} className={styles.todosItem}>
+        <p>{title}</p>
+        <span onClick={removeTodo.bind(null, id)}>x</span>
+      </div>
+    );
   });
 
   return (
     <div className={styles.todos}>
-      <h2>TodoList</h2>
+      <h2 className={styles.todosTitle}>{`Todo list`}</h2>
+      {todoListView}
       <input
         type="text"
         value={newTodo}
@@ -20,7 +26,6 @@ const TodoList: FC = () => {
         onKeyDown={(e) => e.key === 'Enter' && addTodo()}
         placeholder="New todo"
       />
-      {todoListView}
     </div>
   );
 };

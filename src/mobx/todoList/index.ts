@@ -6,8 +6,12 @@ class TodoList {
   constructor() {
     makeObservable(this);
     autorun(() => {
-      db.ref('todo_list').on('child_added', (snapshot) => {
-        this.todos.push(snapshot.val());
+      db.ref('todo_list').on('value', (snapshot) => {
+        const todos: ITodoList[] = [];
+        snapshot.forEach((item) => {
+          todos.push(item.val());
+        });
+        this.todos = todos;
       });
     });
   }
@@ -25,11 +29,19 @@ class TodoList {
   @action
   addTodo = async () => {
     const id = Date.now();
+    const title = this.newTodo;
+
+    this.newTodo = '';
+
     await db.ref(`todo_list/${id}`).set({
       id,
-      title: this.newTodo,
+      title,
     });
-    this.newTodo = '';
+  };
+
+  @action
+  removeTodo = async (id: string) => {
+    await db.ref(`todo_list/${id}`).remove();
   };
 }
 
