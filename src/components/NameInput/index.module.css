@@ -1,0 +1,9 @@
+.nameInput {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.nameInput label {
+    margin-right: 5px;
+}

@@ -7,7 +7,8 @@ const Header: FC = () => (
     <nav className={styles.headerNav}>
       <Link to="/flow-image">Flow image</Link>
       <Link to="/counter">Counter</Link>
-      <Link to="/flow-image">Flow image</Link>
+      <Link to="/form">Form</Link>
+      <Link to="/todo-list">{`Todo list`}</Link>
     </nav>
   </header>
 );

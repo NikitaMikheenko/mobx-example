@@ -7,9 +7,9 @@ class TextInput {
 
   value = '';
 
-  setValue = (value: string) => {
+  setValue = (value: string): void => {
     this.value = value;
   };
 }
 
-export default new TextInput();
+export default TextInput;

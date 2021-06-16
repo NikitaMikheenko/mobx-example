@@ -1,17 +1,18 @@
-.form {
-    display: flex;
-    flex-direction: column;
+.todos {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 180px;
     padding: 20px;
     background: #fff;
     border: 1px solid;
     border-radius: 5px;
 }
 
-.formSubmit {
-    margin: auto auto 0;
+.todos input,
+.todos p
+{
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
 }

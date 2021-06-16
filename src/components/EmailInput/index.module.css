@@ -1,0 +1,20 @@
+.emailInput {
+    margin: 10px 0;
+}
+
+.emailInputBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+.emailInputBlock label {
+    margin-right: 5px;
+}
+
+.emailInput p {
+    align-self: flex-end;
+    margin: 5px 0;
+    font-size: small;
+    color: #FF0000;
+    text-align: right;
+}

@@ -8,6 +8,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "firebase": "^8.6.7",
     "mobx": "^6.3.2",
     "mobx-react": "^7.2.0",
     "react": "^17.0.2",

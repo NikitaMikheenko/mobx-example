@@ -14,7 +14,7 @@
   },
   "rules": {
     "prettier/prettier": "warn",
-    "no-console": "warn",
-    "prefer-const": "warn"
+    "prefer-const": "warn",
+    "react/prop-types": "off"
   }
 }

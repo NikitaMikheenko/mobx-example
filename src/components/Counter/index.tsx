@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { observer } from 'mobx-react';
-import state from '../../mobx/counter';
+import store from '../../mobx/counter';
 import styles from './index.module.css';
 
 const Counter: FC = observer(() => {
-  const { value, increment, decrement } = state;
+  const { value, increment, decrement } = store;
   return (
     <div className={styles.counter}>
       <button type="button" onClick={increment}>
